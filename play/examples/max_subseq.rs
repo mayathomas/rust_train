@@ -14,7 +14,7 @@
 // 输出：1
 // 解释：最长递增子序列是 [7]，因此长度为 1。
 
-//对于任意 j < i, 如果nums[j] < nums[i], dp[i] = min(dp[i], dp[j] + 1)
+//对于任意 j < i, 如果nums[j] < nums[i], dp[i] = max(dp[i], dp[j] + 1)
 fn max_subseq(nums: &Vec<i32>) -> i32 {
     let mut dp = vec![1; nums.len()];
     for i in 0..nums.len() {
