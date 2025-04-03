@@ -1,4 +1,9 @@
 fn main() {
+   
+}
+
+#[allow(unused)]
+fn aaa(){
     struct Y<'yy> {
         fix: &'yy dyn Fn(&Y, u32) -> u32,
     }
