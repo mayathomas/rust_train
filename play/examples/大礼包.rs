@@ -1,4 +1,40 @@
 use std::collections::HashMap;
+
+// dp[i] = min(dp[i][j], dp[i-special[k][0]][j-special[k][1]] + special[k][2])
+// pub fn shopping_offers1(price: Vec<i32>,mut special: Vec<Vec<i32>>, needs: Vec<i32>) -> i32 {
+//     let mut need_remove = Vec::new();
+//     for (i,s) in special.iter_mut().enumerate() {
+//         let mut total = 0;
+//         for (j, n) in s[0..s.len() - 1].iter().enumerate() {
+//             total += n * price[j];
+//             if s[j] > needs[j] {
+//                 need_remove.push(i);
+//             }
+//         }
+//         if total < s[s.len()-1] {
+//             need_remove.push(i);
+//         }
+//         s.push(total-s[s.len()-1]);
+        
+//     }
+//     let special: Vec<Vec<i32>> = special.into_iter().enumerate().filter(|(i,_)| !need_remove.contains(&i)).map(|(_,s)| s).collect();
+//     let mut dp = needs.clone();
+//     for i in special.len() {
+//         for j in 0..dp.len() {
+//             let can_buy = true;
+//             if dp[j] < special[i][j] {
+//                 can_buy = false;
+//                 break;
+//             }
+//         }
+//         if can_buy {
+//             for j in 0..dp.len() {
+//                 dp[j] = dp[j] - special[i][j];
+//             }
+//         }
+//     }
+//     dp
+// }
 // dfs
 pub fn shopping_offers(price: Vec<i32>,mut special: Vec<Vec<i32>>, needs: Vec<i32>) -> i32 {
     let mut need_remove = Vec::new();
